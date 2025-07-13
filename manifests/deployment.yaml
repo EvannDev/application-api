@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: application-api
+  name: application-api
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: application-api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: application-api
+    spec:
+      containers:
+      - image: evanndev/application-api:0.1.0
+        imagePullPolicy: Always
+        name: application-api
+        resources: {}
+      serviceAccountName: application-api
+status: {}

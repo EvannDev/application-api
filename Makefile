@@ -30,6 +30,21 @@ docker-down:
 		docker-compose down; \
 	fi
 
+# Run the application in Kubernetes
+k8s-run:
+	@if kubectl apply -f manifests/ 2>/dev/null; then \
+		echo "Kubernetes resources applied successfully."; \
+	else \
+		echo "Failed to apply Kubernetes resources."; \
+	fi
+# Shutdown Kubernetes resources
+k8s-down:
+	@if kubectl delete -f manifests/ 2>/dev/null; then \
+		echo "Kubernetes resources deleted successfully."; \
+	else \
+		echo "Failed to delete Kubernetes resources."; \
+	fi
+
 # Test the application
 test:
 	@echo "Testing..."
