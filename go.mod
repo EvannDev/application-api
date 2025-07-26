@@ -7,7 +7,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.52.8
 	github.com/joho/godotenv v1.5.1
 	k8s.io/apimachinery v0.26.11
-	k8s.io/client-go v0.26.11
+	k8s.io/client-go v0.33.3
 )
 
 require (
